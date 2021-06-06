@@ -11,10 +11,10 @@ REM ==============================================================
 set list=C:\Users\la0760\Desktop\log\list.txt
 set error=C:\Users\la0760\Desktop\error\error.txt
 set original=C:\Users\la0760\Desktop\original
-set copyed=C:\Users\la0760\Desktop\copied
+set copied=Z:\AO_経営企画室\XX\copied
 
 
-robocopy %original% %copyed% /mir /w:1 >> %list%
+robocopy %original% %copied% /mir /w:1 >> %list%
 if %errorlevel% == 16 echo ***FATAL ERROR*** >> %error%& goto end
 if %errorlevel% == 8 echo **FAILED COPIES** >> %error%& goto end
 if %errorlevel% == 4 echo *MISMATCHES* >> %error%& goto end
