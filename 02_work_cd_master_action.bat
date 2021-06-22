@@ -1,7 +1,7 @@
 ﻿@echo off
 
 SET cnf="C:\ProgramData\MySQL\MySQL Server 8.0\login.cnf"
-SET sql="E:\sql_file\work_cd_master.sql"
+SET sql="E:\sql_file\01_master\work_cd_master.sql"
 SET log="E:\logs\sql_bat\general\log.txt"
 SET error="E:\logs\sql_bat\error\error.txt"
 
