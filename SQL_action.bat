@@ -1,4 +1,4 @@
-@echo on
+@echo off
 CHCP 65001
 
 SET cnf="C:\ProgramData\MySQL\MySQL Server 8.0\login.cnf"
