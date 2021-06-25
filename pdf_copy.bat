@@ -11,8 +11,8 @@ REM =====================================================================
 set result="E:\logs\bat\pdf_copy\result.txt"
 set original="E:\Tableau_PDF"
 set title=[%date% %time% Backup]
-set /p year="作成したレポートの年度を[yyyy]で入力してください。"
 
+set /p year="作成したレポートの年度を[yyyy]で入力してください。"
 set str=%year%
 set len=0
 :LOOP
@@ -21,9 +21,7 @@ if not "%str%"=="" (
     set /a len=%len%+1
     goto :LOOP
 )
-
 set next=%date:~0,4%+1
-
 if not %len%==4 (echo %title% 4桁の数字を入力してください。バッチの実行を終了します。 >>%result%&goto :eof)
 if %year% gtr %next% (echo %title% 今年度以降の年が入力されています。バッチの実行を終了します。 >>%result%&goto :eof)
 if %year% leq 2009 (echo %title% 入力した年度に実績はありません。バッチの実行を終了します。 >>%result%&goto :eof)
@@ -41,19 +39,17 @@ if not %len%==2 (echo %title% 2桁の数字を入力してください。バッ�
 if %month%==00 (echo %title% 入力が無効です。バッチの実行を終了します。 >>%result%&goto: eof) 
 if %month% gtr 13 (echo %title% 入力が無効です。バッチの実行を終了します。 >>%result%&goto: eof)
 
-
 set /p ans="作成したレポートを%year%年度%month%月にコピーします。よろしければy、入力を間違えた場合はnを入力してください。"
 if %ans%==y (
 echo %title% 入力したフォルダを作成し、同期を開始します。 >>%result%
 ) else (
-echo %title% バッチの実行を中止します。 >>%result%&goto: eof
+echo %title% バッチの実行を取りやめます。 >>%result%&goto: eof
 )
 
 set copied="Z:\AO_経営企画室\82. Tableauレポート\%year%年度\%month%月"
 if not exist %copied% (
 mkdir "Z:\AO_経営企画室\82. Tableauレポート\%year%年度\%month%月"
 )
-
 robocopy %original% %copied% /mir /w:1 >>%result%
 echo %title%エラーレベル=%errorlevel% >>%result%
 if %errorlevel% == 1 (
