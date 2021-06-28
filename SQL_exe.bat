@@ -1,4 +1,4 @@
-﻿@echo on
+﻿@echo off
 
 CHCP 65001
 
@@ -15,9 +15,7 @@ for /f %%b in (%paths%) do (
 SET txt=%%b
 if not "!txt:~0,12!"=="E:\sql_file\" (echo %title% 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 >>%result%&goto :eof)
 if not "!txt:~-3!"=="sql" (echo %title% 「sql_exe.txt」には、SQLファイルを記入してください。バッチの実行を中止します。 >>%result%&goto :eof)
-
 SET /a all+=1
-echo !all! >>%result%
 )
 if !all!==0 (echo %title% テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 >>%result%&goto :eof)
 endlocal
