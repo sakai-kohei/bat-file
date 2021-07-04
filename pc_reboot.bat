@@ -1,7 +1,7 @@
-@echo off
+﻿@echo off
 CHCP 65001
 
-SET result="C:\Users\horni\OneDrive\デスクトップ\office\E\logs\bat\pc_reboot\result.txt"
+SET result="E:\logs\bat\pc_reboot\result.txt"
 SET title=[%date% %time% PC_REBOOT]
 
 echo %title% MySQL80の停止を開始します。 >>%result%
