@@ -21,15 +21,6 @@ set title=[%date% %time% Backup]
 
 :yyyy
 set /p year="作成したレポートの年度を[yyyy]で入力してください。"
-set str=%year%
-set len=0
-:LOOP
-if not "%str%"=="" (
-    set str=%str:~1%
-    set /a len=%len%+1
-    goto :LOOP
-)
-if not %len%==4 (echo %title% 4桁の数字を入力してください。もう一度入力してください。 &goto :yyyy)
 if %year% gtr %date:~0,4% (echo %title% 今年度以降の年が入力されています。もう一度入力してください。 &goto :yyyy)
 if %year% leq 2009 (echo %title% 入力した年度に実績はありません。もう一度入力してください。 &goto :yyyy)
 
