@@ -1,7 +1,7 @@
 ﻿@echo off
 CHCP 65001
 
-SET result="C:\Users\la0760\Desktop\logs\pc_reboot\result.txt"
+SET result="E:\logs\bat\pc_reboot\result.txt"
 SET title=[PC_REBOOT]
 
 echo %date% %time% %title% MySQL80の稼働を確認します。 >>%result%
