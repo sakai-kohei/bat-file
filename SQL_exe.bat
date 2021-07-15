@@ -24,7 +24,7 @@ SET count=1
 
 for /f %%b in (%paths%) do (
 SET txt=%%b
-if exist "%txt%" (
+if not exist "%txt%" (
 echo %title% 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 
 echo %title% 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 >>%result%&goto :eof
 )
@@ -46,8 +46,8 @@ echo %title% !count!/%all% %%aの実行を始めます。
 echo %title% !count!/%all% %%aの実行を始めます。 >>%result%
 mysql --defaults-extra-file=%cnf% <%%a >>%result% 2>&1
 if !errorlevel! equ 1 (
-echo %title%  !count!/%all% %%aの実行が失敗しました。
-echo %title%  !count!/%all% %%aの実行が失敗しました。>>%result%&goto :eof  
+echo %title% !count!/%all% %%aの実行が失敗しました。
+echo %title% !count!/%all% %%aの実行が失敗しました。>>%result%&goto :eof  
 ) 
 SET /a count+=1
 )
