@@ -17,7 +17,7 @@ exit
 echo "[$date $title] MySQL80の停止に成功しました。" |  Add-Content $result –pass
 }
 echo "[$date $title] エラーレベル=$LASTEXITCODE"
-} else{
+} elseif(){
 echo "[$date $title] MySQL80は停止していました。" |  Add-Content $result –pass
 }
 
@@ -26,5 +26,6 @@ shutdown.exe -r -t 10
 echo "[$date $title] エラーレベル=$LASTEXITCODE" |  Add-Content $result –pass
 if (-not($LASTEXITCODE -eq 0)){
 echo "[$date $title] PCの再起動に失敗しました。" |  Add-Content $result –pass
+exit
 }
 echo "[$date $title] PCの再起動を実行します。" |  Add-Content $result –pass
