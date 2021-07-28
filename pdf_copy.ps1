@@ -22,58 +22,39 @@ pathは、コピー先フォルダの定数部分を格納する変数
 copiedは、同期先のフォルダ
 =====================================================================#>
 
-<<<<<<< HEAD
-echo "[$date $title] バッチの実行を開始します。 ">> $result
+echo "[$date $title] バッチの実行を開始します。 " |  Add-Content $result –pass
 do {
- $year = Read-Host "作成したレポートの年度を[yyyy]で入力してください。"
+ $year = Read-Host "作成したレポートの年度を[yyyy]で入力してください。" |  Add-Content $result –pass
  if (($year -gt $kotosi) -Or ($year -lt 2009)) {
- echo "[$date $title] 入力された""$year""は無効です。もう一度入力してください。"
+  echo "[$date $title] 入力された""$year""は無効です。もう一度入力してください。" |  Add-Content $result –pass
  }else{
   $i=0
  }
 }while($i -eq 1)
 
-=======
-echo "[$date $title] バッチの実行を開始します。 " |  Add-Content $result –pass
-do {
-$year = Read-Host "作成したレポートの年度を[yyyy]で入力してください。"
-if (($year -gt $kotosi) -Or ($year -lt 2009)) {
-echo "[$date $title] 入力された""$year""は無効です。もう一度入力してください。"  |  Add-Content $result –pass
-}
-else{
->>>>>>> 36a98e14af6c77587d0042256e48f3b5bca74eb2
  do {
   $month = Read-Host "作成したレポートの月を[mm]で入力してください。"  
   if(-not(($month -eq "01") -Or ($month -eq "02") -Or ($month -eq "03") -Or ($month -eq "04") -Or ($month -eq "05") -Or ($month -eq "06") -Or ($month -eq "07") -Or ($month -eq "08") -Or ($month -eq "09") -Or ($month -eq "10") -Or ($month -eq "11") -Or ($month -eq "12"))){
-<<<<<<< HEAD
-   echo "[$date $title] 入力された""$month""は無効です。もう一度入力してください。"
-  }else{
-   $i=1
- }
-}while($i -eq 0)
-=======
    echo "[$date $title] 入力された""$month""は無効です。もう一度入力してください。"  |  Add-Content $result –pass
   }
   else{
-   $i=0
+   $i=1
   }
- }while($i -eq 1)
-}
-}while($i -eq 1)
->>>>>>> 36a98e14af6c77587d0042256e48f3b5bca74eb2
+}while($i -eq 0)
 
-$ans = Read-Host "作成したレポートを"$year"年度"$month"月にコピーします。よろしければy、バッチの実行を停止したい場合はnを入力してください。"
+
+$ans = Read-Host "作成したレポートを"$year"年度"$month"月にコピーします。よろしければy、バッチの実行を停止したい場合はnを入力してください。" |  Add-Content $result –pass
 if($ans -eq "y"){
-echo "[$date $title] 入力したフォルダを作成し、同期を開始します。" |  Add-Content $result –pass
+ echo "[$date $title] 入力したフォルダを作成し、同期を開始します。" |  Add-Content $result –pass
 }
 else {
-echo "[$date $title] バッチの実行を中止します。 " |  Add-Content $result –pass
-exit
+ echo "[$date $title] バッチの実行を中止します。 " |  Add-Content $result –pass
+ exit
 }
 
 $copied=$path+$year+"年度\"+$month+"月"
 if(-not(Test-Path $copied)) {
-mkdir $copied
+ mkdir $copied
 }
 
 robocopy $original $copied /mir /w:1  |  Add-Content $result –pass
@@ -86,6 +67,6 @@ if($LASTEXITCODE -eq "0"){
  echo "[$date $title] 同期の必要がなかったため、バッチは実行されませんでした。" |  Add-Content $result –pass
  exit
  }
- if($LASTEXITCODE -gt "1"){
+if($LASTEXITCODE -gt "1"){
  echo "[$date $title] エラーが発生したため、バッチの実行が失敗しました。" |  Add-Content $result –pass
- }
+}

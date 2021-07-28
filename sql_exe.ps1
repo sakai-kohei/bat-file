@@ -47,8 +47,5 @@ echo "[$date $title]"$count"/"$all" "$l"の実行が失敗しました。" |  Ad
 exit
 }
 }
-<<<<<<< HEAD
-echo "[$date $title バッチの実行が正常に終了しました。" |  Add-Content $result –pass
-=======
 echo "[$date $title] バッチの実行が正常に終了しました。" |  Add-Content $result –pass
->>>>>>> 36a98e14af6c77587d0042256e48f3b5bca74eb2
+
