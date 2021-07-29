@@ -21,15 +21,15 @@ $count=0
 $f = (Get-Content $paths -Encoding UTF8)
 for ($i=0; $i -lt $f.Length; $i++) {
  if(($f[$i] -eq "")){
-  echo "[$date $title  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 " |  Add-Content $result –pass
+  echo "[$date $title]  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 " |  Add-Content $result –pass
   exit
  }
  if(-not(Test-Path $l)) {
-  echo "[$date $title 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 " |  Add-Content $result –pass
+  echo "[$date $title] 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 " |  Add-Content $result –pass
   exit
  }
  if (-not($sql -eq "sql" )){
-  echo "[$date $title 「sql_exe.txt」には、SQLファイルを記入してください。バッチの実行を中止します。" |  Add-Content $result –pass
+  echo "[$date $title] 「sql_exe.txt」には、SQLファイルを記入してください。バッチの実行を中止します。" |  Add-Content $result –pass
   exit
  }
 }
