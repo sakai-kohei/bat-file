@@ -33,17 +33,16 @@ do {
 }while($i -eq 1)
 
  do {
-  $month = Read-Host "作成したレポートの月を[mm]で入力してください。"  
+  $month = Read-Host "作成したレポートの月を[mm]で入力してください。" 
   if(-not(($month -eq "01") -Or ($month -eq "02") -Or ($month -eq "03") -Or ($month -eq "04") -Or ($month -eq "05") -Or ($month -eq "06") -Or ($month -eq "07") -Or ($month -eq "08") -Or ($month -eq "09") -Or ($month -eq "10") -Or ($month -eq "11") -Or ($month -eq "12"))){
    echo "[$date $title] 入力された""$month""は無効です。もう一度入力してください。"  |  Add-Content $result –pass
-  }
-  else{
+  }else{
    $i=1
   }
 }while($i -eq 0)
 
-
-$ans = Read-Host "作成したレポートを"$year"年度"$month"月にコピーします。よろしければy、バッチの実行を停止したい場合はnを入力してください。" |  Add-Content $result –pass
+$ans = Read-Host "作成したレポートを"$year"年度"$month"月にコピーします。
+よろしければy、バッチの実行を停止したい場合はnを入力してください。" |  Add-Content $result –pass
 if($ans -eq "y"){
  echo "[$date $title] 入力したフォルダを作成し、同期を開始します。" |  Add-Content $result –pass
 }
@@ -62,11 +61,9 @@ echo "エラーレベル=$LASTEXITCODE" |  Add-Content $result –pass
 if($LASTEXITCODE -eq "1"){
  echo "[$date $title] バッチの実行により、同期が成功しました。" |  Add-Content $result –pass
  exit
-}
-if($LASTEXITCODE -eq "0"){
+}elseif($LASTEXITCODE -eq "0"){
  echo "[$date $title] 同期の必要がなかったため、バッチは実行されませんでした。" |  Add-Content $result –pass
  exit
- }
-if($LASTEXITCODE -gt "1"){
+}elseif($LASTEXITCODE -gt "1"){
  echo "[$date $title] エラーが発生したため、バッチの実行が失敗しました。" |  Add-Content $result –pass
 }
