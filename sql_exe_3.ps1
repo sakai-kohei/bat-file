@@ -21,24 +21,24 @@ $txt = (Get-Content $paths -Encoding UTF8)
 
 for ($i=0; $i -lt $txt.Length; $i++) {
  if(($txt[$i] -eq "")){
-  echo "[$date $title]  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 " |  Add-Content $result –pass
+  echo "[$date $title]  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 " |  Add-Content $result -Encoding UTF8 –pass
   exit
  }
  if(-not(Test-Path $txt[$i])) {
-  echo "[$date $title] 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 " |  Add-Content $result –pass
+  echo "[$date $title] 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 " |  Add-Content $result -Encoding UTF8 –pass
   exit
  }
  $sql=$txt[$i].Substring($txt[$i].Length - 4, 4)
  if (-not($sql -eq ".sql" )){
-  echo "[$date $title] 「sql_exe.txt」には、SQLファイルを記入してください。バッチの実行を中止します。" |  Add-Content $result –pass
+  echo "[$date $title] 「sql_exe.txt」には、SQLファイルを記入してください。バッチの実行を中止します。" |  Add-Content $result -Encoding UTF8 –pass
   exit
  }
  $count=$i+1
- echo ("[$date $title]"+" "+"$count"+"/"+ @($txt).Length+" "+@($txt)[$i]+"の実行を始めます。") |  Add-Content $result –pass
- Get-Content $l | mysql --defaults-extra-file="$cnf" |  Add-Content $result –pass 2>&1
+ echo ("[$date $title]"+" "+"$count"+"/"+ @($txt).Length+" "+@($txt)[$i]+"の実行を始めます。") |  Add-Content $result -Encoding UTF8 –pass
+ Get-Content @($txt)[$i] | mysql --defaults-extra-file="$cnf" |  Add-Content $result -Encoding UTF8 –pass 2>&1
  if($LASTEXITCODE -eq 1){
-  echo ("[$date $title]"+" "+"$count"+"/"+ @($txt).Length+" "+@($txt)[$i]+"の実行が失敗しました。") |  Add-Content $result –pass
+  echo ("[$date $title]"+" "+"$count"+"/"+ @($txt).Length+" "+@($txt)[$i]+"の実行が失敗しました。") |  Add-Content $result -Encoding UTF8 –pass
   exit
  }
 }
-echo "[$date $title] バッチの実行が正常に終了しました。" |  Add-Content $result –pass
+echo "[$date $title] バッチの実行が正常に終了しました。" |  Add-Content $result -Encoding UTF8 –pass
