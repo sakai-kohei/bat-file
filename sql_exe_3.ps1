@@ -14,12 +14,12 @@ txtは、実行するSQLファイル名を一時的に格納する変数
 $cnf="C:\ProgramData\MySQL\MySQL Server 8.0\login.cnf"
 $paths="E:\sql_exe.txt"
 $result="E:\logs\bat\sql_exe\result.txt"
-$date=Get-Date
 $title="SQL_EXE"
 $count=0
 $txt = (Get-Content $paths -Encoding UTF8)
 
 for ($i=0; $i -lt $txt.Length; $i++) {
+ $date=Get-Date
  if(($txt[$i] -eq "")){
   echo "[$date $title]  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 " |  Add-Content $result -Encoding UTF8 –pass
   exit

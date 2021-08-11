@@ -1,4 +1,4 @@
 ﻿@echo off
 CHCP 65001
 
-powershell -File "C:\Users\horni\OneDrive\デスクトップ\office\bat-file\sql_exe.ps1"
+powershell -File "E:\bat_file\sql_exe_3.ps1"
