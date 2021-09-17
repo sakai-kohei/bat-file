@@ -22,9 +22,6 @@ if($LASTEXITCODE -eq 1){
  sc.exe query MySQL80 | findstr STATE | findstr RUNNING > null
  if($LASTEXITCODE -eq 1){
   echo ("["+(Get-Date -Format G)+" $title] MySQL80の停止に成功しました。") |  Add-Content $result -Encoding UTF8 –pass
- }elseif($LASTEXITCODE -eq 0){
-  echo ("["+(Get-Date -Format G)+" $title] MySQL80の停止に失敗しました。") |  Add-Content $result -Encoding UTF8 –pass
-  exit
  }else{
   echo ("["+(Get-Date -Format G)+" $title] MySQL80の停止に失敗しました。バッチの実行を停止します。") |  Add-Content $result -Encoding UTF8 –pass
   exit
