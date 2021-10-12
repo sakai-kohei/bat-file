@@ -12,8 +12,8 @@ txtは、実行するSQLファイル名を一時的に格納する変数
 =====================================================================#>
 
 $cnf="C:\ProgramData\MySQL\MySQL Server 8.0\login.cnf"
-$paths="E:\sql_exe.txt"
-$result="E:\05_logs\bat\sql_exe\result.txt"
+$paths="F:\sql_exe.txt"
+$result="F:\05_logs\bat\sql_exe\result.txt"
 $title="SQL_EXE"
 $count=0
 $txt = @(Get-Content $paths -Encoding UTF8)

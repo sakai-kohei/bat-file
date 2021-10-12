@@ -14,8 +14,8 @@ pathは、コピー先フォルダの定数部分を格納する変数
 copiedは、同期先のフォルダ
 =====================================================================#>
 
-$result="E:\logs\bat\pdf_copy\result.txt"
-$original="E:\Tableau_PDF"
+$result="F:\logs\bat\pdf_copy\result.txt"
+$original="F:\08_Tableau_PDF"
 $title="Backup"
 $kotosi=(Get-Date).Year
 $path="Z:\AO_経営企画室\82. Tableauレポート\"

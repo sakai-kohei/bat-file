@@ -7,7 +7,7 @@ dateは、バッチ実行時の日付と時間
 titleは、メッセージを格納している変数
 =====================================================================#>
 
-$result="E:\logs\bat\pc_reboot\result.txt"
+$result="F:\05_logs\bat\pc_reboot\result.txt"
 $title="PC_REBOOT"
 
 echo ("["+(Get-Date -Format G)+" $title] PCの再起動の実行を始めます。") |  Add-Content $result -Encoding UTF8  –pass
