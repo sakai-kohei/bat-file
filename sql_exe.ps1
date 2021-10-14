@@ -18,12 +18,12 @@ $title="SQL_EXE"
 $count=0
 $txt = @(Get-Content $paths -Encoding UTF8)
 
-for ($i=0; $i -lt $txt.Length; $i++) {
- $date=Get-Date
- if((@($txt[$i]) -eq "")){
+if(($txt.Length -eq 0)){
   echo ("["+(Get-Date -Format G)+" $title]  テキストに実行するSQLファイルが記載されていません。バッチの実行を中止します。 ") |  Add-Content $result -Encoding UTF8 –pass
   exit
  }
+
+for ($i=0; $i -lt $txt.Length; $i++) {
  if(-not(Test-Path @($txt[$i]))) {
   echo ("["+(Get-Date -Format G)+" $title] 「sql_exe.txt」に記入したSQLファイルのパスが間違っています。バッチの実行を中止します。 ") |  Add-Content $result -Encoding UTF8 –pass
   exit
