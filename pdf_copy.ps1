@@ -18,7 +18,7 @@ $result="F:\logs\bat\pdf_copy\result.txt"
 $original="F:\08_Tableau_PDF"
 $title="Backup"
 $kotosi=(Get-Date).Year
-$path="Z:\AO_経営企画室\82. Tableauレポート\"
+$path="Z:\AO_経営企画室\XX. Tableauレポート\"
 $i=1
 
 echo ("["+(Get-Date -Format G)+" $title] バッチの実行を開始します。") |  Add-Content $result -Encoding UTF8 –pass
