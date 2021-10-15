@@ -14,7 +14,7 @@ pathは、コピー先フォルダの定数部分を格納する変数
 copiedは、同期先のフォルダ
 =====================================================================#>
 
-$result="F:\logs\bat\pdf_copy\result.txt"
+$result="F:\05_logs\bat\pdf_copy\result.txt"
 $original="F:\08_Tableau_PDF"
 $title="Backup"
 $kotosi=(Get-Date).Year
@@ -42,7 +42,7 @@ do {
 
 $ans = Read-Host "作成したレポートを"$year"年度"$month"月にコピーします。よろしければy、バッチの実行を停止したい場合はnを入力してください。" |  Add-Content $result -Encoding UTF8 –pass
 if($ans -eq "y"){
- echo ("["+(Get-Date -Format G)+" $title] 入力したフォルダを作成し、同期を開始します。") |  Add-Content $result -Encoding UTF8 –pass
+ echo ("["+(Get-Date -Format G)+" $title] 入力したフォルダとの、同期を開始します。") |  Add-Content $result -Encoding UTF8 –pass
 }
 else {
  echo ("["+(Get-Date -Format G)+" $title] バッチの実行を中止します。 ") |  Add-Content $result -Encoding UTF8 –pass
@@ -52,6 +52,12 @@ else {
 $copied=$path+$year+"年度\"+$month+"月"
 if(-not(Test-Path $copied)) {
  mkdir $copied
+if($LASTEXITCODE -eq "0"){
+ echo ("["+(Get-Date -Format G)+" $title] フォルダが新規作成されました。") |  Add-Content $result -Encoding UTF8 –pass
+}else{
+ echo ("["+(Get-Date -Format G)+" $title] フォルダの新規作成に失敗しました。バッチの実行を停止します。")|  Add-Content $result -Encoding UTF8 –pass
+ exit
+ }
 }
 
 robocopy $original $copied /mir /w:1  |  Add-Content $result -Encoding UTF8 –pass
@@ -62,6 +68,9 @@ if($LASTEXITCODE -eq "1"){
 }elseif($LASTEXITCODE -eq "0"){
  echo ("["+(Get-Date -Format G)+" $title] 同期の必要がなかったため、バッチは実行されませんでした。") |  Add-Content $result -Encoding UTF8 –pass
  exit
-}elseif($LASTEXITCODE -gt "1"){
+}elseif($LASTEXITCODE -lt "7"){
+ echo ("["+(Get-Date -Format G)+" $title] 同期先の余分なファイルが削除して、同期が実行されました。") |  Add-Content $result -Encoding UTF8 –pass
+ exit
+}elseif($LASTEXITCODE -gt "7"){
  echo ("["+(Get-Date -Format G)+" $title] エラーが発生したため、バッチの実行が失敗しました。") |  Add-Content $result -Encoding UTF8 –pass
 }

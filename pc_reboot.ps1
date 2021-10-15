@@ -32,7 +32,7 @@ if($LASTEXITCODE -eq 1){
 }
 
 echo ("["+(Get-Date -Format G)+" $title] PCの再起動を開始します。") |  Add-Content $result -Encoding UTF8 –pass
-
+shutdown -s -t 5
 echo ("["+(Get-Date -Format G)+" $title] エラーレベル=$LASTEXITCODE") |  Add-Content $result -Encoding UTF8 –pass
 if (-not($LASTEXITCODE -eq 0)){
 echo ("["+(Get-Date -Format G)+" $title] PCの再起動に失敗しました。") |  Add-Content $result -Encoding UTF8 –pass
