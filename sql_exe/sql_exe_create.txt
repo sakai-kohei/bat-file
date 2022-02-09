@@ -1,0 +1,8 @@
+F:\03_sql_file\initial\01_master\CREATE_TABLE\create_table_master.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_ao_solution_code.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_cc_code_FY19-FY22.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_division_code_FY19-FY22.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_service_code_FY19-FY21.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_sl_code.sql
+F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_work_code.sql
+F:\03_sql_file\operational\01_master\ALTER_TABLE\alter_mst_work_code_220208.sql
