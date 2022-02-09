@@ -1,7 +1,0 @@
-F:\03_sql_file\initial\03_original\CREATE_TABLE\create_table_original.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_shikakari_1901-2112.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_analysis_detail_1901-2112.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_anken_detail_1901-2112.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_cost_detail_1901-2112.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_pjt_transfer_1901-2112.sql
-F:\03_sql_file\initial\03_original\LOAD_INFILE\org_sales_detail_1901-2112.sql

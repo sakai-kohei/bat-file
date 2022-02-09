@@ -1,1 +1,0 @@
-F:\03_sql_file\initial\03_original\CREATE_TABLE\create_table_original.sql
