@@ -1,0 +1,1 @@
+F:\03_sql_file\operational\01_master\DROP_TABLE\drop_table_master_220210.sql
