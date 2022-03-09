@@ -1,3 +1,1 @@
-F:\03_sql_file\operational\01_master\DROP_TABLE\drop_table_master_220221.sql
-F:\03_sql_file\initial\01_master\CREATE_TABLE\create_table_mst_subject_translation.sql
-F:\03_sql_file\initial\01_master\LOAD_INFILE\mst_subject_translation.sql
+F:\03_sql_file\operational\03_original\DROP_TABLE\drop_table_original_220308.sql
