@@ -1,1 +1,1 @@
-F:\03_sql_file\operational\03_original\DROP_TABLE\drop_table_original_220308.sql
+F:\03_sql_file\operational\03_original\DELETE\delete_original_220308.sql
