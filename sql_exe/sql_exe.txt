@@ -1,2 +1,1 @@
-F:\03_sql_file\operational\03_original\CREATE_TABLE\create_table_org_expected_detail.sql
-F:\03_sql_file\operational\03_original\LOAD_INFILE\org_expected_detail_2205.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_expected_detail_220613.sql
