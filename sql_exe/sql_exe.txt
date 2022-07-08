@@ -1,1 +1,13 @@
-F:\03_sql_file\operational\03_original\LOAD_INFILE\org_expected_detail_220613.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_pjt_detail_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_pjt_transfer_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_sales_detail_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_shikakari_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_partner_close_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_partner_open_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_mgmt_report_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_fin_report_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_cost_detail_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_cc_keihi_2205.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_anken_detail_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_analysis_detail_2206.sql
+F:\03_sql_file\operational\03_original\LOAD_INFILE\org_payment_detail_2206.sql
